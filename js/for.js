@@ -1,7 +1,7 @@
 document.addEventListener('DOMContentLoaded', function () {
     try {
         forElementAll();
-        resize();
+        //resize();
     } catch (e) {
         console.error(e);
     }
