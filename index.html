@@ -1,0 +1,101 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="Cache-Control" content="max-age=3600">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0">
+    <title>Rheast LLC</title>
+    <link rel="icon" type="image/png" href="img/icon/favicon.png">
+    <link rel="icon" type="image/svg+xml" href="img/icon/favicon.svg">
+    <link rel="icon shortcut" type="image/x-icon" href="img/icon/favicon.ico">
+    <link rel="stylesheet" type="text/css" href="css/rheast.css">
+</head>
+
+<body>
+    <div class="cRheast">
+        <div class="head">
+            <div class="triangle"></div>
+            <div class="inner">
+                <img class="img logo" src="img/icon/rheast.svg">
+                <h2>
+                    <span n-for="myHead" n-index="1">{text}</span>
+                </h2>
+                <label class="button showFreedom" title="Academic Freedom">LEARN MORE</label>
+            </div>
+        </div>
+
+        <div class="word academicFreedom">
+            <div class="inner">
+                <div class="view">
+                    <h1>About</h1>
+                    <p n-for="myFreedom" n-index="1">{text}</p>
+                </div>
+            </div>
+        </div>
+
+        <div n-for="myData" n-index="1" class="word {color}">
+            <div class="inner">
+                <div class="view paper">
+                    <h1>{text}</h1>
+                    <h5 n-for="myData[{index}].list" n-index="2">
+                        <strong><a href="{link}" target="_blank">{text}</a></strong>
+                        <span class="flex">
+                            <small>{time}</small>
+                            <em n-for="myData[{index}].list[{inner}].data" n-index="3">
+                                <a href="{link}" target="_blank">
+                                    <img class="{icon}" src="{url}">
+                                </a>
+                            </em>
+                        </span>
+                    </h5>
+                </div>
+            </div>
+        </div>
+
+        <div class="word foot">
+            <div class="inner">
+                <div class="view">
+                    <h1>Contact</h1>
+                    <dl class="index contact">
+                        <dd n-for="myUser" n-index="1">
+                            <h4>
+                                <img class="user" src="img/icon/icon.dark.svg">
+                                <label><span>{name}</span></label>
+                                <span>{before}<span>@</span>{after}</span>
+                            </h4>
+                        </dd>
+                    </dl>
+                    <div style="display:none;">
+                        <a href="mailto:admin@spam.rheast.com">admin@spam.rheast.com</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="last dark">
+            <div class="inner">
+                <div class="view">
+                    <dl class="index">
+                        <dd>
+                            <h5>
+                                <a href="https://github.com/rheast" target="_blank" class="github">
+                                    <img src="img/logo/github.light.svg">
+                                </a>
+                            </h5>
+                            <h5>
+                                <span>Rheast LLC, 1331 Lamar St, Houston, TX 77010</span>
+                            </h5>
+                        </dd>
+                    </dl>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/data.js"></script>
+    <script src="js/for.js"></script>
+
+</body>
+
+</html>
