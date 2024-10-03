@@ -388,7 +388,6 @@ b {
 
 .cRheast .last h5 a,
 .cRheast .last h5 img {
-    height: 2em;
     width: auto;
     display: inline-block;
     position: relative;
@@ -396,6 +395,11 @@ b {
 
 .cRheast .last h5 a {
     padding: 0.5em 0.75em;
+    display: inline-flex;
+}
+
+.cRheast .last h5 img {
+    height: 2em;
 }
 
 .cRheast .last .twitter img {
@@ -560,4 +564,9 @@ b {
     .cRheast .foot h5 span {
         margin: 1em auto 0;
     }
+}
+
+.scholar img {
+    border-radius: 9em;
+    overflow: hidden;
 }

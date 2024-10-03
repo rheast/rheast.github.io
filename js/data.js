@@ -88,3 +88,8 @@ for (let n in myData) {
 var myUser = [
     { name: "S. Chen", before: "chen", after: "rheast.com" },
 ];
+
+var myLink = [
+    { class: 'github', link: 'https://github.com/rheast', url: 'img/logo/github.light.svg' },
+    { class: 'scholar', link: 'https://scholar.google.com/citations?user=di6KaxoAAAAJ', url: 'img/logo/scholar.png' },
+];
