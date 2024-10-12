@@ -76,11 +76,8 @@ var myData = [
 ];
 
 for (let n in myData) {
-    myData[n].index = n;
     myData[n].list = myData[n].list.reverse();
     for (let i in myData[n].list) {
-        myData[n].list[i].index = n;
-        myData[n].list[i].inner = i;
         myData[n].list[i].link = myData[n].list[i].data[0].link;
     }
 }

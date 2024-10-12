@@ -10,7 +10,7 @@ html {
     font-family: 'Segoe UI', Tahoma, 'Geneva', Verdana, sans-serif;
 }
 
-[n-for] {
+[_for] {
     visibility: hidden;
 }
 

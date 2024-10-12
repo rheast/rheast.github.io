@@ -1,5 +1,7 @@
 document.addEventListener('DOMContentLoaded', function () {
     try {
+        setMigrate();
+        setElementAll();
         forElementAll();
         //resize();
     } catch (e) {
@@ -8,10 +10,10 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 
 function forCheck(obj, info) {
-    let div = obj.querySelectorAll('[n-if],[n-else]');
+    let div = obj.querySelectorAll('[_if],[_else]');
     for (let i = 0; i < div.length; i++) {
-        let _if = div[i].getAttribute('n-if');
-        let _else = div[i].getAttribute('n-else');
+        let _if = div[i].getAttribute('_if');
+        let _else = div[i].getAttribute('_else');
         if ((_if && !info[_if]) || (_else && info[_else])) {
             div[i].remove();
         }
@@ -43,8 +45,8 @@ function forAttr(obj, info) {
         let attr = obj.getAttribute(name[i]);
         if (attr) {
             let text = forInner(String(attr), info);
-            if (name[i] == 'n-for') {
-                obj.setAttribute('n-save', attr);
+            if (name[i] == '_for') {
+                obj.setAttribute('_save', attr);
             }
             if (text != attr) {
                 if (text.length > 0) {
@@ -67,22 +69,22 @@ function forChild(obj, info) {
 }
 
 function forSave(obj, old) {
-    let inside = obj.querySelectorAll('[n-save]');
+    let inside = obj.querySelectorAll('[_save]');
     for (let i = 0; i < inside.length; i++) {
         inside[i].innerHTML = '';
     }
-    inside = obj.querySelectorAll('[n-save]');
+    inside = obj.querySelectorAll('[_save]');
     for (let i = 0; i < inside.length; i++) {
-        let name = inside[i].getAttribute('n-save');
-        let inner = old.querySelector('[n-for="' + name + '"]').innerHTML;
+        let name = inside[i].getAttribute('_save');
+        let inner = old.querySelector('[_for="' + name + '"]').innerHTML;
         inside[i].innerHTML = inner;
-        inside[i].removeAttribute('n-save');
+        inside[i].removeAttribute('_save');
     }
     return obj;
 }
 
 function forBox(obj) {
-    let data = eval(obj.getAttribute('n-for'));
+    let data = eval(forName(obj));
     for (let i in data) {
         let info = data[i];
         let copy = obj.cloneNode(true);
@@ -91,26 +93,97 @@ function forBox(obj) {
         copy = forAttr(copy, info);
         copy = forChild(copy, info);
         copy = forSave(copy, obj, info);
-        copy.removeAttribute('n-for');
-        copy.removeAttribute('n-index');
-        copy.removeAttribute('n-save');
+        copy = forClean(copy);
+        copy = forCount(copy, i);
         obj.parentNode.insertBefore(copy, obj);
     }
     obj.remove();
 }
 
+function forName(obj) {
+    let name = obj.getAttribute('_for');
+    let count = obj.getAttribute('_count');
+    if (count) {
+        count = count.split(',');
+    }
+    for (let i in count) {
+        name = name.replace('|' + i + '|', count[i]);
+    }
+    return name;
+}
+
+function forCount(obj, index) {
+    let box = obj.querySelectorAll('[_for]');
+    for (let i = 0; i < box.length; i++) {
+        let e = box[i].getAttribute('_count');
+        if (!e) {
+            e = '';
+        }
+        box[i].setAttribute('_count', e + index + ',');
+    }
+    return obj;
+}
+
+function forClean(obj) {
+    let attr = ['_for', '_i', '_index', '_save', '_count'];
+    for (let i in attr) {
+        obj.removeAttribute(attr[i]);
+    }
+    return obj;
+}
+
+function forClean(obj) {
+    let attr = ['for', 'i', 'index', 'save', 'count'];
+    for (let a in attr) {
+        obj.removeAttribute('_' + attr[a]);
+    }
+    return obj;
+}
+
 function forElement(name) {
-    let box = document.querySelectorAll('[n-for="' + name + '"]');
+    let box = document.querySelectorAll('[_for="' + name + '"]');
     for (let i = 0; i < box.length; i++) {
         forBox(box[i]);
     }
 }
 
-function forElementAll() {
+function setElementAll() {
+    let name = ''
     for (let n = 1; n < 10; n++) {
-        let box = document.querySelectorAll('[n-index="' + n + '"]');
+        name += '[_for] ';
+        let box = document.querySelectorAll(name);
+        for (let i = 0; i < box.length; i++) {
+            let index = box[i].getAttribute('_index');
+            if (!index) {
+                index = n;
+            }
+            box[i].setAttribute('_i', index);
+        }
+    }
+}
+
+function setMigrate() {
+    let tag = ['n-', 'v-'];
+    let attr = ['for', 'i', 'index', 'save', 'count', 'if', 'else'];
+    for (let t in tag) {
+        for (let a in attr) {
+            let box = document.querySelectorAll('[' + tag[t] + attr[a] + ']');
+            for (let i = 0; i < box.length; i++) {
+                box[i].setAttribute('_' + attr[a], box[i].getAttribute(tag[t] + attr[a]));
+                box[i].removeAttribute(tag[t] + attr[a]);
+            }
+        }
+    }
+}
+
+function forElementAll() {
+    for (let n = 0; n < 100; n++) {
+        let box = document.querySelectorAll('[_i="' + n + '"]');
         for (let i = 0; i < box.length; i++) {
             forBox(box[i]);
+        }
+        if (document.querySelectorAll('[_for]').length == 0) {
+            break;
         }
     }
 }

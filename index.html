@@ -19,7 +19,7 @@
             <div class="inner">
                 <img class="img logo" src="img/icon/rheast.svg">
                 <h2>
-                    <span n-for="myHead" n-index="1">{text}</span>
+                    <span _for="myHead">{text}</span>
                 </h2>
                 <label class="button showFreedom" title="Academic Freedom">LEARN MORE</label>
             </div>
@@ -29,20 +29,20 @@
             <div class="inner">
                 <div class="view">
                     <h1>About</h1>
-                    <p n-for="myFreedom" n-index="1">{text}</p>
+                    <p _for="myFreedom">{text}</p>
                 </div>
             </div>
         </div>
 
-        <div n-for="myData" n-index="1" class="word {color}">
+        <div _for="myData" class="word {color}">
             <div class="inner">
                 <div class="view paper">
                     <h1>{text}</h1>
-                    <h5 n-for="myData[{index}].list" n-index="2">
+                    <h5 _for="myData[|0|].list">
                         <strong><a href="{link}" target="_blank">{text}</a></strong>
                         <span class="flex">
                             <small>{time}</small>
-                            <em n-for="myData[{index}].list[{inner}].data" n-index="3">
+                            <em _for="myData[|0|].list[|1|].data">
                                 <a href="{link}" target="_blank">
                                     <img class="{icon}" src="{url}">
                                 </a>
@@ -58,7 +58,7 @@
                 <div class="view">
                     <h1>Contact</h1>
                     <dl class="index contact">
-                        <dd n-for="myUser" n-index="1">
+                        <dd _for="myUser">
                             <h4>
                                 <img class="user" src="img/icon/icon.dark.svg">
                                 <label><span>{name}</span></label>
@@ -79,7 +79,7 @@
                     <dl class="index">
                         <dd>
                             <h5>
-                                <a n-for="myLink" n-index="1" href="{link}" target="_blank" class="{class}">
+                                <a _for="myLink" href="{link}" target="_blank" class="{class}">
                                     <img src="{url}">
                                 </a>
                             </h5>
