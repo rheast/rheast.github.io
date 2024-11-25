@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /index.html
+Disallow: /css/
+Disallow: /img/
+Disallow: /js/
+Sitemap: https://rheast.com/sitemap.xml
