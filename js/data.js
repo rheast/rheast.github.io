@@ -46,7 +46,7 @@ var myData = [
             },
             {
                 value: "Static Render v1.0",
-                time: "December 10, 2024",
+                time: "Dec 10, 2024",
                 data: [
                     {
                         url: "img/logo/GitHub_Logo.svg",
