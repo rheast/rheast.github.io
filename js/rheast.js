@@ -68,7 +68,7 @@ class RHEast {
                 if (node.getAttribute('_level')) {
                     this.forClone(node, data);
                 } else {
-                    this.forReplace(node, data);
+                    this.forReplace(node, data, index);
                 }
             }
         });
