@@ -1,0 +1,568 @@
+html,
+body {
+    font-size: 16px;
+    width: 100%;
+    min-height: 100%;
+}
+
+html {
+    height: 100%;
+    font-family: 'Segoe UI', Tahoma, 'Geneva', Verdana, sans-serif;
+}
+
+div,
+* {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    outline: none;
+    line-height: 1.4em;
+}
+
+a {
+    text-decoration-line: none !important;
+    text-decoration: none !important;
+    color: inherit !important;
+    cursor: pointer;
+}
+
+b {
+    font-weight: normal;
+}
+
+.img,
+.image {
+    background-position: center center !important;
+    background-repeat: no-repeat !important;
+    background-size: cover !important;
+}
+
+.img {
+    background-size: contain !important;
+}
+
+.cRheast {
+    display: block;
+    color: #2d2d2d;
+}
+
+.cRheast h6 {
+    font-weight: normal;
+}
+
+.cRheast h6 a,
+.cRheast h6 span {
+    margin: 1em 0.75em 0;
+    display: inline-block;
+}
+
+.cRheast .inner {
+    max-width: 1200px;
+    max-width: 75em;
+    display: block;
+    position: relative;
+    margin: 0 auto;
+}
+
+.cRheast .head,
+.cRheast .foot,
+.cRheast .last {
+    display: block;
+    position: relative;
+    overflow: hidden;
+}
+
+.cRheast .head {
+    height: 28em;
+    color: #fff;
+    background: #2d2d2d;
+    text-align: center;
+    margin-bottom: 2em;
+}
+
+.cRheast .head .inner {
+    padding: 2.5em 0 0;
+}
+
+.cRheast .head .logo,
+.cRheast .head h2 {
+    margin: 0 auto;
+    display: block;
+    position: relative;
+}
+
+.cRheast .head .logo {
+    height: 8em;
+    width: auto;
+    margin-bottom: 1em;
+    left: -0.5em;
+}
+
+.cRheast .head h2 {
+    font-size: 1.5em;
+    max-width: 100%;
+    position: relative;
+}
+
+.cRheast .head h2 span {
+    display: inline-block;
+    white-space: nowrap;
+    margin: 0 0.5em;
+}
+
+.cRheast .head button,
+.cRheast .head .button {
+    font-size: 1em;
+    height: 3em;
+    width: 10em;
+    min-width: 10em;
+    line-height: 3em;
+    display: block;
+    padding: 0;
+    margin: 5em auto 0;
+    text-align: center;
+    border-radius: 0.25em;
+    font-weight: bold;
+    background: #fff;
+    color: #2d2d2d;
+    border: none;
+    cursor: pointer;
+    user-select: none;
+    text-indent: 0.05em;
+    letter-spacing: 0.05em;
+}
+
+.cRheast .head button:nth-child(n),
+.cRheast .head .button:nth-child(n) {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.cRheast h4 {
+    font-size: 1.125em;
+}
+
+.cRheast h5 {
+    font-size: 1em;
+}
+
+.cRheast h6 {
+    font-size: 0.875em;
+}
+
+.cRheast h4,
+.cRheast h5,
+.cRheast h6 {
+    font-weight: normal;
+    position: relative;
+}
+
+.cRheast .word {
+    padding: 4em 2em;
+    overflow: hidden;
+    position: relative;
+}
+
+.cRheast .word .box {
+    min-height: 18em;
+    padding-right: 15em;
+    position: relative;
+}
+
+.cRheast .word .view {
+    min-height: 15em;
+    position: relative;
+}
+
+.cRheast .word .ctf {
+    height: 18em;
+    width: auto;
+    display: block;
+    position: absolute;
+    right: 0;
+    top: 50%;
+    margin-top: -9em;
+    background-color: #fff;
+}
+
+.cRheast .word .ctf:nth-child(n) {
+    border: 0.25em solid #fff;
+    box-sizing: border-box;
+    box-shadow: 0 0.125em 0.5em rgba(0,0,0,0.1);
+}
+
+.cRheast .word p {
+    text-indent: 2em;
+}
+
+.cRheast .word h1 + p {
+    margin-top: 3em;
+}
+
+.cRheast .word p + p {
+    margin-top: 2em;
+}
+
+.cRheast .word .user {
+    font-size: 3em;
+    width: 1em;
+    height: 1em;
+    display: block;
+    position: absolute;
+    left: 0;
+    top: 50%;
+    margin: -0.5em 0;
+    border: 1px solid #2d2d2d;
+    border-radius: 3em;
+    box-sizing: border-box;
+}
+
+.cRheast .word.dark .user {
+    border-color: #fff;
+}
+
+.cRheast .word h1 {
+    font-size: 1.75em;
+    padding: 0.5em 0;
+    display: inline-block;
+    border: 1px solid #2d2d2d;
+    border-left: none;
+    border-right: none;
+    text-transform: uppercase;
+}
+
+.cRheast .word h5 {
+    font-size: 1.125em;
+    font-weight: normal;
+    margin-top: 3.5em;
+}
+
+.cRheast .word h5 strong {
+    font-size: 1.125em;
+    font-weight: normal;
+    display: block;
+}
+
+.cRheast .word h5 img {
+    height: 1em;
+    width: auto;
+    display: inline-block;
+}
+
+.cRheast .word h5 em {
+    margin: 0 0.75em;
+    display: inline-flex;
+    position: relative;
+}
+
+.cRheast .word h5 em:first-child {
+    margin-left: 0;
+}
+
+.cRheast .word h5 em a::before {
+    content: " ";
+    width: 100%;
+    height: 100%;
+    display: block;
+    position: absolute;
+    left: 0;
+    top: 0;
+    transform: scale(1,2);
+}
+
+.cRheast .word h5 img:nth-child(n) {
+    box-sizing: border-box;
+    position: relative;
+}
+
+.cRheast .word h5 span {
+    margin-right: 1em;
+}
+
+.cRheast .word h5 small {
+    margin-right: 0.5em;
+    display: inline-block;
+}
+
+.cRheast .word h5 span,
+.cRheast .word h5 label {
+    width: auto;
+    min-width: 18em;
+    max-width: 100%;
+    margin-top: 0.25em;
+    display: inline-block;
+    white-space: nowrap;
+}
+
+.cRheast .word .image,
+.cRheast .word .image::before {
+    width: 100%;
+    height: 100%;
+    display: block;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+
+.cRheast .word .image::before {
+    content: " ";
+    background: rgba(10, 10, 10, 0.75);
+}
+
+.cRheast .word .flex,
+.cRheast .word .flexBox {
+    display: flex;
+    align-items: center;
+}
+
+.cRheast .word .flex {
+    flex-wrap: wrap;
+    margin-top: 0.5em;
+}
+
+.cRheast .word .house {
+    height: 2.5em;
+    margin: -1em 0;
+    transform: translateY(-0.9375em);
+}
+
+.cRheast .foot h4 {
+    display: inline-block;
+    text-align: left;
+    padding: 0.25em 0;
+    padding-left: 4em;
+}
+
+.cRheast .foot h4 label {
+    display: block;
+    position: relative;
+    white-space: nowrap;
+}
+
+.cRheast .foot h4 span {
+    display: inline-block;
+}
+
+.cRheast .foot h4 small {
+    margin-left: 1em;
+    opacity: 0.75;
+}
+
+.cRheast .foot h4 i {
+    width: 1px;
+    display: inline-block;
+    margin-right: -1px;
+    user-select: none;
+    opacity: 0.02;
+    filter: opacity(0.02);
+}
+
+.cRheast .foot h4 b {
+    font-weight: normal;
+}
+
+.cRheast .last {
+    padding: 1em 0;
+}
+
+.cRheast .last h5 {
+    text-align: center;
+}
+
+.cRheast .last h5:last-child {
+    margin-bottom: 1em;
+}
+
+.cRheast .last h5 span {
+    font-size: 0.875em;
+    width: auto;
+    min-width: 20em;
+    display: inline-block;
+    white-space: nowrap;
+    margin: 1em 1em 0;
+}
+
+.cRheast .last h5 a,
+.cRheast .last h5 img {
+    width: auto;
+    display: inline-block;
+    position: relative;
+}
+
+.cRheast .last h5 a {
+    padding: 0.5em 0.75em;
+    display: inline-flex;
+}
+
+.cRheast .last h5 img {
+    height: 2em;
+}
+
+.cRheast .last .twitter img {
+    top: 0.125em;
+}
+
+.cRheast .foot h6 {
+    text-align: center;
+}
+
+.cRheast .foot .index {
+    display: block;
+    text-align: center;
+    margin: 0 auto;
+}
+
+.cRheast .foot .index dd {
+    width: 30%;
+    margin-top: 5em;
+    display: inline-block;
+}
+
+.cRheast .last .index dd {
+    width: 100%;
+    max-width: 100%;
+    margin-top: 0;
+}
+
+.cRheast .dark {
+    color: #fff;
+    background: #2d2d2d;
+    text-shadow: #2d2d2d 0 0.1em 0.2em;
+}
+
+.cRheast .gray {
+    background: #f0f6fd;
+}
+
+.cRheast .dark h1 {
+    border-color: #fff;
+}
+
+.cRheast .inner {
+    overflow: hidden;
+}
+
+.cRheast .word h5 + h5::before {
+    content: " ";
+    width: 100%;
+    height: 1px;
+    display: block;
+    box-sizing: border-box;
+    border-top: 1px solid #000;
+    margin-bottom: 3em;
+    content: "";
+    display: none;
+}
+
+.cRheast .word.dark h5 + h5::before {
+    border-color: #fff;
+}
+
+@media screen and (min-width:1px) {
+    .cRheast .head {
+        height: 30em;
+    }
+    
+    .cRheast .triangle {
+        font-size: 20em;
+        width: 100%;
+        height: 1em;
+        display: block;
+        position: absolute;
+        left: 0;
+        top: 0.5em;
+        overflow: hidden;
+    }
+    
+    .cRheast .triangle::before {
+        content: " ";
+        width: 0;
+        height: 0;
+        display: block;
+        margin: 0 -1em;
+        border: 1em solid;
+        border-color: #2d2d2d #fff #fff;
+        transform: scaleX(5);
+        position: absolute;
+        left: 50%;
+        top: -1px;
+    }
+}
+
+@media screen and (max-width:1000px) {
+    .cRheast .foot .index dd {
+        width: 45%;
+    }
+}
+
+@media screen and (max-width:800px) {
+    body {
+        font-size: 14px;
+    }
+
+    .cRheast .head .inner {
+        padding: 3em 0 0;
+    }
+
+    .cRheast .head button,
+    .cRheast .head .button {
+        margin-top: 3.5em;
+    }
+
+    .cRheast .head h2 span {
+        margin: 0 0;
+    }
+}
+
+@media screen and (max-width:600px) {
+    .cRheast .word .box {
+        padding: 0;
+    }
+
+    .cRheast .word .ctf {
+        height: auto;
+        width: 100%;
+        display: block;
+        margin: 3em auto 0;
+        position: relative;
+        left: auto;
+        top: auto;
+    }
+
+    .cRheast .foot .index dd {
+        width: 100%;
+    }
+
+    .cRheast .foot h4 {
+        min-width: 8.75em;
+    }
+
+    .cRheast .foot h5 span {
+        width: 100%;
+        margin: 1em auto 0;
+        display: block;
+    }
+}
+
+@media screen and (max-width:400px) {
+    body {
+        font-size: 12px;
+    }
+
+    .cRheast .head h2 {
+        font-size: 1.375em;
+    }
+
+    .cRheast .foot h5 span {
+        margin: 1em auto 0;
+    }
+}
+
+.cRheast .scholar img {
+    border-radius: 9em;
+    overflow: hidden;
+}
