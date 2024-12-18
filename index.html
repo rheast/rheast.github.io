@@ -1,0 +1,98 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="Cache-Control" content="max-age=3600">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0">
+    <meta name="description" content="Rheast LLC | Academic Freedom">
+    <title>Rheast LLC</title>
+    <link rel="alternate icon" type="image/png" href="img/icon/favicon.png">
+    <link rel="icon" type="image/svg+xml" href="img/icon/favicon.svg">
+    <link rel="shortcut icon" type="image/x-icon" href="img/icon/favicon.ico">
+    <link rel="stylesheet" type="text/css" href="css/rheast.css">
+    <script src="js/rheast.js"></script>
+    <script src="data/data.js"></script>
+</head>
+
+<body>
+    <div class="cRheast">
+        <div class="head">
+            <div class="triangle"></div>
+            <div class="inner">
+                <img class="img logo" src="img/icon/rheast.svg" alt="Rheast LLC">
+                <h2>
+                    <span _for="myHead">{_this}</span>
+                </h2>
+                <label class="button showFreedom">LEARN MORE</label>
+            </div>
+        </div>
+
+        <div class="word">
+            <div class="inner">
+                <div class="view">
+                    <h1>About</h1>
+                    <p _for="myFreedom">{_this}</p>
+                </div>
+            </div>
+        </div>
+
+        <div _for="myData" class="word {color}">
+            <div class="inner">
+                <div class="view paper">
+                    <h1>{value}</h1>
+                    <h5 _for="data">
+                        <strong><a href="{link}" target="_blank">{value}</a></strong>
+                        <span class="flex">
+                            <small>{time}</small>
+                            <em _for="data">
+                                <a href="{link}" target="_blank">
+                                    <img class="{icon}" _src="{url}">
+                                </a>
+                            </em>
+                        </span>
+                    </h5>
+                </div>
+            </div>
+        </div>
+
+        <div class="word foot">
+            <div class="inner">
+                <div class="view">
+                    <h1>Contact</h1>
+                    <dl class="index contact">
+                        <dd _for="myUser">
+                            <h4>
+                                <img class="user" src="img/icon/icon.dark.svg">
+                                <label><span>{name}</span></label>
+                                <span>{before}<span>@</span>{after}</span>
+                            </h4>
+                        </dd>
+                    </dl>
+                </div>
+            </div>
+        </div>
+
+        <div class="last dark">
+            <div class="inner">
+                <div class="view">
+                    <dl class="index">
+                        <dd>
+                            <h5>
+                                <a _for="myLink" href="{link}" target="_blank" class="{class}">
+                                    <img _src="{url}">
+                                </a>
+                            </h5>
+                            <h5>
+                                <span>Rheast LLC, 1331 Lamar St, Houston, TX 77010</span>
+                            </h5>
+                        </dd>
+                    </dl>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>
