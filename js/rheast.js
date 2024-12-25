@@ -1,4 +1,4 @@
-// StaticRender v1.04 - Rheast.js
+// StaticRender v1.05 - Rheast.js
 
 class RHEast {
     constructor() {
@@ -87,7 +87,7 @@ class RHEast {
     }
 
     forBrackets(value, data) {
-        return value.replace(/{(.*?)}/g, (_, key) => String(data[key] || ''));
+        return value.replace(/{(.*?)}/g, (_, key) => data[key] === 0 ? '0' : (data[key] ? String(data[key]) : ''));
     }
 
     href(name) {

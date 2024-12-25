@@ -16,79 +16,69 @@
 </head>
 
 <body>
-    <div class="cRheast">
-        <div class="head">
-            <div class="triangle"></div>
-            <div class="inner">
-                <img class="img logo" src="img/icon/rheast.svg" alt="Rheast LLC">
+    <div class="cRheast c_black">
+        <div class="head rel b_black center">
+            <div class="vTriangle"></div>
+            <div class="inner rel">
+                <div class="logo">
+                    <img class="yMax auto" src="img/icon/rheast.svg" alt="Rheast LLC">
+                </div>
                 <h2>
-                    <span _for="myHead">{_this}</span>
+                    <span _for="myHead" class="nowrap">{_this}</span>
                 </h2>
-                <label class="button showFreedom">LEARN MORE</label>
+                <div class="cButton b_white auto">LEARN MORE</div>
             </div>
         </div>
 
         <div class="word">
             <div class="inner">
-                <div class="view">
-                    <h1>About</h1>
-                    <p _for="myFreedom">{_this}</p>
-                </div>
+                <h1>About</h1>
+                <p _for="myFreedom">{_this}</p>
             </div>
         </div>
 
         <div _for="myData" class="word {color}">
             <div class="inner">
-                <div class="view paper">
-                    <h1>{value}</h1>
-                    <h5 _for="data">
-                        <strong><a href="{link}" target="_blank">{value}</a></strong>
-                        <span class="flex">
-                            <small>{time}</small>
-                            <em _for="data">
-                                <a href="{link}" target="_blank">
-                                    <img class="{icon}" _src="{url}">
-                                </a>
-                            </em>
-                        </span>
-                    </h5>
-                </div>
+                <h1>{value}</h1>
+                <h4 class="paper" _for="data">
+                    <label>
+                        <a href="{link}" target="_blank">{value}</a>
+                    </label>
+                    <span class="wrap">
+                        <small>{time}</small>
+                        <a href="{link}" target="_blank" _for="data">
+                            <img class="{icon}" _src="{url}">
+                        </a>
+                    </span>
+                </h4>
             </div>
         </div>
 
-        <div class="word foot">
+        <div class="word">
             <div class="inner">
-                <div class="view">
-                    <h1>Contact</h1>
-                    <dl class="index contact">
-                        <dd _for="myUser">
-                            <h4>
-                                <img class="user" src="img/icon/icon.dark.svg">
-                                <label><span>{name}</span></label>
-                                <span>{before}<span>@</span>{after}</span>
-                            </h4>
-                        </dd>
-                    </dl>
-                </div>
+                <h1>Contact</h1>
+                <dl class="contact wrap middle">
+                    <dd class="middle" _for="myUser">
+                        <h4 class="rel nowrap">
+                            <em class="user iImg" style="background-image:url('img/icon/icon.dark.svg');"></em>
+                            <label><span>{name}</span></label>
+                            <label><span>{before}<span>@</span>{after}</span></label>
+                        </h4>
+                    </dd>
+                </dl>
             </div>
         </div>
 
-        <div class="last dark">
-            <div class="inner">
-                <div class="view">
-                    <dl class="index">
-                        <dd>
-                            <h5>
-                                <a _for="myLink" href="{link}" target="_blank" class="{class}">
-                                    <img _src="{url}">
-                                </a>
-                            </h5>
-                            <h5>
-                                <span>Rheast LLC, 1331 Lamar St, Houston, TX 77010</span>
-                            </h5>
-                        </dd>
-                    </dl>
+        <div class="foot b_black">
+            <div class="inner center">
+                <div class="wrap middle">
+                    <a _for="myLink" href="{link}" target="_blank">
+                        <em class="iImg" _style="background-image:url('{url}');"></em>
+                    </a>
                 </div>
+                <h6 class="nowrap">
+                    <span>Rheast LLC, 1331 Lamar St, Houston, TX 77010</span>
+                </h6>
             </div>
         </div>
     </div>

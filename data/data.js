@@ -13,7 +13,7 @@ var myFreedom = [
 var myData = [
     {
         value: "Publication",
-        color: "dark",
+        color: "b_black",
         data: [
             {
                 value: "Commentary on LRAs targeting NF-κB with epigenetic and mutational impacts on HIV latency",
@@ -28,7 +28,7 @@ var myData = [
         ],
     },
     {
-        value: "Preprint",
+        value: "Other",
         data: [
             {
                 value: "Space Theory",
@@ -45,8 +45,8 @@ var myData = [
                 ],
             },
             {
-                value: "StaticRender v1.04",
-                time: "Dec 11, 2024",
+                value: "StaticRender v1.05",
+                time: "Dec 25, 2024",
                 data: [
                     {
                         url: "img/logo/GitHub_Logo.svg",
@@ -58,7 +58,7 @@ var myData = [
     },
     {
         value: "News",
-        color: "dark",
+        color: "b_black",
         data: [
             {
                 value: "Stanford professor who challenged lockdowns and 'scientific clerisy' declares academic freedom 'dead'",
@@ -76,7 +76,7 @@ var myData = [
                 data: [
                     {
                         url: "img/logo/house.png",
-                        icon: "house",
+                        icon: "cHouse",
                         link: "https://oversight.house.gov/release/hearing-wrap-up-dr-fauci-held-publicly-accountable-by-select-subcommittee/",
                     },
                 ],
@@ -85,18 +85,17 @@ var myData = [
     },
 ];
 
-for (let n in myData) {
-    myData[n].data = myData[n].data.reverse();
-    for (let i in myData[n].data) {
-        myData[n].data[i].link = myData[n].data[i].data[0].link;
-    }
-}
+myData.forEach(item => {
+    item.data.reverse().forEach(entry => {
+        entry.link = entry.data[0].link;
+    });
+});
 
 var myUser = [
     { name: "S. Chen", before: "chen", after: "rheast.com" },
 ];
 
 var myLink = [
-    { class: 'github', link: 'https://github.com/rheast', url: 'img/logo/github.light.svg' },
-    { class: 'scholar', link: 'https://scholar.google.com/citations?user=di6KaxoAAAAJ', url: 'img/logo/scholar.png' },
+    { link: 'https://github.com/rheast', url: 'img/logo/github.light.svg' },
+    { link: 'https://scholar.google.com/citations?user=di6KaxoAAAAJ', url: 'img/logo/scholar.png' },
 ];
