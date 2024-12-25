@@ -99,3 +99,5 @@ var myLink = [
     { link: 'https://github.com/rheast', url: 'img/logo/github.light.svg' },
     { link: 'https://scholar.google.com/citations?user=di6KaxoAAAAJ', url: 'img/logo/scholar.png' },
 ];
+
+var myAddr = ['Rheast LLC, 1331 Lamar St, Houston, TX 77010'];
