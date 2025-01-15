@@ -1,7 +1,11 @@
-// StaticRender v1.05 - Rheast.js
+// StaticRender - Rheast.js
 
 class RHEast {
     constructor() {
+        this.name = 'StaticRender';
+        this.time = 'Jan 15, 2025';
+        this.version = `v${1.06}`;
+        console.log(this.name, this.version, 'Rheast.js');
         this.forStyle();
         document.addEventListener('DOMContentLoaded', () => {
             this.forLoad();
@@ -43,6 +47,7 @@ class RHEast {
             if (!target) { return data };
             if (/^\[.*\]$|^\{.*\}$/.test(target)) { return JSON.parse(target) };
             if (data && target in data) { return data[target] };
+            if (Array.isArray(data)) { return data };
             if (target in window) { return window[target] };
             return data;
         } catch (e) {
