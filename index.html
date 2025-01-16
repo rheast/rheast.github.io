@@ -12,7 +12,6 @@
     <link rel="shortcut icon" type="image/x-icon" href="img/icon/favicon.ico">
     <link rel="stylesheet" type="text/css" href="css/rheast.css">
     <script src="js/rheast.js"></script>
-    <script src="data/load.js"></script>
 </head>
 
 <body>
@@ -82,6 +81,23 @@
             </div>
         </div>
     </div>
+
+    <script>
+        rheast.get('data/data.json', (data) => {
+            data.myData.forEach(item => {
+                item.data.reverse().forEach(entry => {
+                    entry.link = entry.data[0].link;
+                    if (entry.value == rheast.name) {
+                        entry.value += " " + rheast.version;
+                        entry.time = rheast.time;
+                    }
+                });
+            });
+            for (let i in data) {
+                rheast.forClone(`[_for="${i}"]`, data[i]);
+            }
+        });
+    </script>
 </body>
 
 </html>

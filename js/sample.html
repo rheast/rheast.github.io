@@ -34,7 +34,7 @@
                 </span>
             </div>
         </li>
-        <li _for="newData" _keep>
+        <li _bind="newData">
             <div>{time}</div>
             <table>
                 <tbody>
@@ -71,23 +71,16 @@
             },
         ]);
 
-        for (let i in [...Array(3)]) {
+        for (let i in [...Array(11)]) {
             setTimeout(() => {
-                let data = {
-                    "status": 200,
-                    "message": "Request successful",
+                rheast.forClone('[_bind="newData"]', {
+                    "time": new Date().getFullYear() + i * 1,
                     "data": [
-                        {
-                            "time": new Date().getFullYear() + i * 1,
-                            "data": [
-                                { "name": "Alice", "age": 39 + i * 1, "city": "New York", color: "inherit" },
-                                { "name": "Bob", "age": 28 + i * 1, "city": "Los Angeles", color: "red" },
-                                { "name": "Charlie", "age": 25 + i * 1, "city": "Chicago", color: "blue" },
-                            ],
-                        }
+                        { "name": "Alice", "age": 39 + i * 1, "city": "New York", color: "inherit" },
+                        { "name": "Bob", "age": 28 + i * 1, "city": "Los Angeles", color: "red" },
+                        { "name": "Charlie", "age": 25 + i * 1, "city": "Chicago", color: "blue" },
                     ],
-                };
-                rheast.forClone('[_for="newData"]', data.data);
+                });
             }, 3000 * i);
         }
 
