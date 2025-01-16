@@ -188,8 +188,7 @@ img.auto {
 
 .cButton {
     width: 10em;
-    height: 3em;
-    line-height: 3em;
+    padding: 0.75em 0.25em;
     font-weight: bold;
     text-indent: 0.05em;
     letter-spacing: 0.05em;
