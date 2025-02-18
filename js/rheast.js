@@ -16,7 +16,9 @@ class RHEast {
 
     forLoad() {
         Array.from(document.querySelectorAll('[_data]')).forEach(div => {
-            this.get(div.getAttribute('_data'), (data) => {
+            fetch(div.getAttribute('_data')).then(response => {
+                return response.ok && response.json();
+            }).then(data => {
                 let handle = div.getAttribute('_handle');
                 if (handle && typeof window[handle] === 'function') {
                     data = window[handle](data) || data;
@@ -25,13 +27,17 @@ class RHEast {
                 Array.from(document.querySelectorAll('[_load]')).forEach(item => {
                     this.forComponent(item, data);
                 });
+            }).catch(error => {
+                console.error(error);
             });
         });
     }
 
     forComponent(div, data) {
         div = this.div(div);
-        fetch(div.getAttribute('_load')).then(rs => rs.text()).then(item => {
+        fetch(div.getAttribute('_load')).then(text => {
+            return text.text();
+        }).then(item => {
             div.innerHTML = item;
             this.forRender(div, data);
             div.removeAttribute('_load');
@@ -157,16 +163,6 @@ class RHEast {
 
     div(div) {
         return typeof div === 'string' ? document.querySelector(div) : div;
-    }
-
-    get(url, process) {
-        fetch(url).then(response => {
-            return response.ok && response.json();
-        }).then(data => {
-            process(data);
-        }).catch(error => {
-            console.error(error);
-        });
     }
 
     href(name) {
