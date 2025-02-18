@@ -12,92 +12,15 @@
     <link rel="shortcut icon" type="image/x-icon" href="img/icon/favicon.ico">
     <link rel="stylesheet" type="text/css" href="css/rheast.css">
     <script src="js/rheast.js"></script>
+    <script src="data/data.js"></script>
 </head>
 
 <body>
-    <div class="cRheast c_black">
-        <div class="head rel b_black center">
-            <div class="vTriangle"></div>
-            <div class="inner rel">
-                <div class="logo">
-                    <img class="yMax auto" src="img/icon/rheast.svg" alt="Rheast LLC">
-                </div>
-                <h2>
-                    <span _for="myHead" class="nowrap">{_this}</span>
-                </h2>
-                <div class="cButton b_white auto">LEARN MORE</div>
-            </div>
-        </div>
-
-        <div class="word">
-            <div class="inner">
-                <h1>About</h1>
-                <p _for="myFreedom">{_this}</p>
-            </div>
-        </div>
-
-        <div _for="myData" class="word {color}">
-            <div class="inner">
-                <h1>{value}</h1>
-                <h4 class="paper" _for="data">
-                    <label>
-                        <a href="{link}" target="_blank">{value}</a>
-                    </label>
-                    <span class="wrap">
-                        <small>{time}</small>
-                        <a href="{link}" target="_blank" _for="data">
-                            <img class="{icon}" _src="{url}">
-                        </a>
-                    </span>
-                </h4>
-            </div>
-        </div>
-
-        <div class="word">
-            <div class="inner">
-                <h1>Contact</h1>
-                <dl class="contact wrap middle">
-                    <dd class="middle" _for="myUser">
-                        <h4 class="rel nowrap">
-                            <em class="user iImg" style="background-image:url('img/icon/icon.dark.svg');"></em>
-                            <label><span>{name}</span></label>
-                            <label><span>{before}<span>@</span>{after}</span></label>
-                        </h4>
-                    </dd>
-                </dl>
-            </div>
-        </div>
-
-        <div class="foot b_black">
-            <div class="inner center">
-                <div class="wrap middle">
-                    <a _for="myLink" href="{link}" target="_blank">
-                        <em class="iImg" _style="background-image:url('{url}');"></em>
-                    </a>
-                </div>
-                <h6 class="nowrap">
-                    <span _for="myAddr">{_this}</span>
-                </h6>
-            </div>
-        </div>
+    <div class="cRheast c_black" _data="data/data.json" _handle="myVersion">
+        <div _load="body/head.html"></div>
+        <div _load="body/body.html"></div>
+        <div _load="body/foot.html"></div>
     </div>
-
-    <script>
-        rheast.get('data/data.json', (data) => {
-            data.myData.forEach(item => {
-                item.data.reverse().forEach(entry => {
-                    entry.link = entry.data[0].link;
-                    if (entry.value == rheast.name) {
-                        entry.value += " " + rheast.version;
-                        entry.time = rheast.time;
-                    }
-                });
-            });
-            for (let i in data) {
-                rheast.forClone(`[_for="${i}"]`, data[i]);
-            }
-        });
-    </script>
 </body>
 
 </html>

@@ -4,57 +4,58 @@ class RHEast {
     constructor() {
         this.name = 'StaticRender';
         this.time = 'Jan 15, 2025';
-        this.version = `v${1.07}`;
+        this.version = `v${1.08}`;
         this.virtual = [];
         this.forStyle();
         console.log(this.name, this.version, 'Rheast.js');
         document.addEventListener('DOMContentLoaded', () => {
+            this.forRender();
             this.forLoad();
         });
     }
 
-    forStyle() {
-        let style = document.createElement('style');
-        style.textContent = '[_for]{visibility:hidden;}[_keep]{display:none;}';
-        document.querySelector('head').appendChild(style);
+    forLoad() {
+        Array.from(document.querySelectorAll('[_data]')).forEach(div => {
+            this.get(div.getAttribute('_data'), (data) => {
+                let handle = div.getAttribute('_handle');
+                if (handle && typeof window[handle] === 'function') {
+                    data = window[handle](data) || data;
+                }
+                this.forRender(div, data);
+                Array.from(document.querySelectorAll('[_load]')).forEach(item => {
+                    this.forComponent(item, data);
+                });
+            });
+        });
     }
 
-    forLoad() {
-        const box = Array.from(document.querySelectorAll('[_for]')).filter(
-            element => !Array.from(document.querySelectorAll('[_for] [_for],[_bind] [_for]')).includes(element)
+    forComponent(div, data) {
+        div = this.div(div);
+        fetch(div.getAttribute('_load')).then(rs => rs.text()).then(item => {
+            div.innerHTML = item;
+            this.forRender(div, data);
+            div.removeAttribute('_load');
+        }).catch(error => console.error(error));
+    }
+
+    forRender(div, data) {
+        div = this.div(div);
+        div = div || document.querySelector('body');
+        let box = Array.from(div.querySelectorAll('[_for]')).filter(
+            element => !Array.from(div.querySelectorAll('[_for] [_for],[_bind] [_for]')).includes(element)
         );
-        Array.from(box).forEach(item => { this.forClone(item) });
+        Array.from(box).forEach(item => { this.forClone(item, data) });
     }
 
     forClone(div, data) {
-        div = typeof div === 'string' ? document.querySelector(div) : div;
+        div = this.div(div);
         switch (true) {
             case !div: {
                 return false;
             }
-            case div.hasAttribute('_bind'): {
-                return this.forBind(div, data);
-            }
             case div.hasAttribute('_for'): {
                 return this.forLoop(div, data);
             }
-        }
-    }
-
-    forBind(div, data, clone = false) {
-        if (div.dataset.virtual) {
-            clone = document.createElement('div');
-            clone.innerHTML = this.virtual[div.dataset.virtual];
-            clone = clone.firstElementChild;
-        } else {
-            div.dataset.virtual = this.virtual.length;
-            this.virtual.push(div.outerHTML);
-            clone = div;
-        }
-        this.forReplace(clone, data);
-        this.forRetard(clone);
-        if (div.outerHTML != clone.outerHTML) {
-            div.outerHTML = clone.outerHTML;
         }
     }
 
@@ -91,8 +92,8 @@ class RHEast {
                 default:
                     return data;
             }
-        } catch (e) {
-            console.error(e);
+        } catch (error) {
+            console.error(error);
             return false;
         }
     }
@@ -148,11 +149,19 @@ class RHEast {
         return value.replace(/{(.*?)}/g, (_, key) => data[key] === 0 ? '0' : (data[key] ? String(data[key]) : ''));
     }
 
+    forStyle() {
+        let style = document.createElement('style');
+        style.textContent = '[_for]{visibility:hidden;}';
+        document.querySelector('head').appendChild(style);
+    }
+
+    div(div) {
+        return typeof div === 'string' ? document.querySelector(div) : div;
+    }
+
     get(url, process) {
         fetch(url).then(response => {
-            if (response.ok) {
-                return response.json();
-            }
+            return response.ok && response.json();
         }).then(data => {
             process(data);
         }).catch(error => {
