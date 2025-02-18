@@ -17,7 +17,7 @@ class RHEast {
     forLoad() {
         Array.from(document.querySelectorAll('[_data]')).forEach(div => {
             fetch(div.getAttribute('_data')).then(response => {
-                return response.ok && response.json();
+                return response.json();
             }).then(data => {
                 let handle = div.getAttribute('_handle');
                 if (handle && typeof window[handle] === 'function') {
@@ -27,18 +27,16 @@ class RHEast {
                 Array.from(document.querySelectorAll('[_load]')).forEach(item => {
                     this.forComponent(item, data);
                 });
-            }).catch(error => {
-                console.error(error);
-            });
+            }).catch(error => console.error(error));
         });
     }
 
     forComponent(div, data) {
         div = this.div(div);
-        fetch(div.getAttribute('_load')).then(text => {
-            return text.text();
-        }).then(item => {
-            div.innerHTML = item;
+        fetch(div.getAttribute('_load')).then(response => {
+            return response.text();
+        }).then(text => {
+            div.innerHTML = text;
             this.forRender(div, data);
             div.removeAttribute('_load');
         }).catch(error => console.error(error));
