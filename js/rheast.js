@@ -86,7 +86,7 @@ class RHEast {
                 case !target:
                     return data;
                 case /^\[.*\]$|^\{.*\}$/.test(target):
-                    return JSON.parse(target);
+                    return JSON.parse(target.replaceAll("'", '"'));
                 case data && target in data:
                     return data[target];
                 case Array.isArray(data):
