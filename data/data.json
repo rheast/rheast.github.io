@@ -30,8 +30,18 @@
             "value": "Other",
             "data": [
                 {
+                    "value": "StaticRender",
+                    "time": null,
+                    "data": [
+                        {
+                            "url": "img/logo/GitHub_Logo.svg",
+                            "link": "https://github.com/rheast/rheast.github.io/tree/main/js"
+                        }
+                    ]
+                },
+                {
                     "value": "Space Theory",
-                    "time": "May 08, 2021",
+                    "time": "Feb 17, 2025",
                     "data": [
                         {
                             "url": "img/logo/osf.dark.png",
@@ -44,12 +54,12 @@
                     ]
                 },
                 {
-                    "value": "StaticRender",
-                    "time": null,
+                    "value": "The Statistical Illusion of a Global HIV Endgame",
+                    "time": "Mar 31, 2025",
                     "data": [
                         {
-                            "url": "img/logo/GitHub_Logo.svg",
-                            "link": "https://github.com/rheast/rheast.github.io/tree/main/js"
+                            "url": "img/logo/MedRxiv.dark.png",
+                            "link": "https://medrxiv.org/cgi/content/short/2025.03.30.25324894v1"
                         }
                     ]
                 }
