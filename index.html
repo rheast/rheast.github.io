@@ -27,16 +27,55 @@
                     <div class="t-2e my-2 h-4e w-full flex-center">
                         <img class="h-full ml-2c" src="img/icon/rheast.svg" alt="Rheast LLC">
                     </div>
-                    <p class="flex-center flex-wrap nowrap mb-20 bold">
-                        <span class="t-x4 mx-2" _for="data">{_this}</span>
-                    </p>
+                    <ul class="flex-center flex-wrap nowrap mb-20 bold">
+                        <li class="t-x3 mx-2" _for="data">
+                            <p>{_this}</p>
+                        </li>
+                    </ul>
                     <div class="flex-center nowrap letter bold">
-                        <div class="b_white px-6 py-3 r-1">LEARN MORE</div>
+                        <div class="b_white px-6 py-3 r-1">{button}</div>
                     </div>
                 </div>
             </div>
         </div>
 
+
+        <div class="rel px-8 py-16 {color}" _if="body">
+            <div class="inner">
+                <h1 class="t-x6">{title}</h1>
+
+                <ul class="rel pt-4" _if="word">
+                    <li class="mt-8 t-i2" _for="data">
+                        <p>{_this}</p>
+                    </li>
+                </ul>
+
+                <ul class="rel t-x1" _if="list">
+                    <li class="mt-12" _for="data">
+                        <p class="w-full flex mb-1">
+                            <a href="{link}" target="_blank">{value}</a>
+                        </p>
+                        <p class="w-full flex-wrap nowrap">
+                            <span class="mw-7e pr-3">{time}</span>
+                            <a class="flex-center mr-3" href="{link}" target="_blank" _for="data">
+                                <img class="h-1e {icon}" _src="{url}">
+                            </a>
+                        </p>
+                    </li>
+                </ul>
+
+                <ul class="rel flex-center flex-wrap nowrap" _if="user">
+                    <li class="w-50 mt-16 flex-center" _for="data">
+                        <em class="img block m-3e t-x1 r-9" _style="background-image:url('{img}');"></em>
+                        <div class="ml-4">
+                            <label class="flex t-x1"><span>{name}</span></label>
+                            <label class="flex"><span>{before}<span>@</span>{after}</span></label>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        
         <div class="rel py-8 {color}" _if="foot">
             <div class="inner">
                 <div class="flex-center flex-wrap nowrap">
@@ -44,44 +83,11 @@
                         <em class="img block m-2e r-9" _style="background-image:url('{url}');"></em>
                     </a>
                 </div>
-                <p class="t-ct mt-4">
-                    <span class="t-s3">{foot}</span>
-                </p>
-            </div>
-        </div>
-
-        <div class="rel px-8 py-16 {color}" _if="body">
-            <div class="inner">
-                <h1 class="t-x6">{title}</h1>
-
-                <div class="rel pt-4" _if="word">
-                    <p class="mt-8 t-i2" _for="data">{_this}</p>
-                </div>
-
-                <div class="rel t-x1" _if="list">
-                    <p class="mt-12" _for="data">
-                        <span class="w-full flex mb-1">
-                            <a href="{link}" target="_blank">{value}</a>
-                        </span>
-                        <span class="w-full flex-wrap nowrap">
-                            <span class="mw-7e pr-3">{time}</span>
-                            <a class="flex-center mr-3" href="{link}" target="_blank" _for="data">
-                                <img class="h-1e {icon}" _src="{url}">
-                            </a>
-                        </span>
-                    </p>
-                </div>
-
-                <div class="rel flex-center flex-wrap nowrap" _if="user">
-                    <div class="w-50 mt-16 flex-center" _for="data">
-                        <em class="img block m-3e t-x1 r-9"
-                            style="background-image:url('img/icon/icon.dark.svg');"></em>
-                        <p class="ml-4">
-                            <label class="flex t-x1"><span>{name}</span></label>
-                            <label class="flex"><span>{before}<span>@</span>{after}</span></label>
-                        </p>
-                    </div>
-                </div>
+                <ul class="t-ct mt-4 flex-center flex-wrap nowrap">
+                    <li class="t-s3 mx-1" _for="addr">
+                        <label>{_this}</label>
+                    </li>
+                </ul>
             </div>
         </div>
     </div>

@@ -4,6 +4,7 @@ var yourData = [
             "Truth doesn't mind being questioned.",
             "A lie doesn't like being challenged."
         ],
+        button: "LEARN MORE",
         head: true,
     },
     {
@@ -21,23 +22,23 @@ var yourData = [
         title: "Publication",
         data: [
             {
-                "value": "The Statistical Illusion of a Global HIV Endgame",
-                "time": "Mar 31, 2025",
-                "data": [
+                value: "The Statistical Illusion of a Global HIV Endgame",
+                time: "Mar 31, 2025",
+                data: [
                     {
-                        "url": "img/logo/MedRxiv.light.png",
-                        "icon": "t-x1 light",
-                        "link": "https://medrxiv.org/cgi/content/short/2025.03.30.25324894v1"
+                        url: "img/logo/MedRxiv.light.png",
+                        icon: "t-x1 light",
+                        link: "https://medrxiv.org/cgi/content/short/2025.03.30.25324894v1"
                     }
                 ]
             },
             {
-                "value": "Commentary on LRAs targeting NF-κB with epigenetic and mutational impacts on HIV latency",
-                "time": "Sep 25, 2024",
-                "data": [
+                value: "Commentary on LRAs targeting NF-κB with epigenetic and mutational impacts on HIV latency",
+                time: "Sep 25, 2024",
+                data: [
                     {
-                        "url": "img/logo/wiley.light.svg",
-                        "link": "https://onlinelibrary.wiley.com/doi/10.1002/imo2.31"
+                        url: "img/logo/wiley.light.svg",
+                        link: "https://onlinelibrary.wiley.com/doi/10.1002/imo2.31"
                     }
                 ]
             },
@@ -49,26 +50,26 @@ var yourData = [
         title: "Other",
         data: [
             {
-                "value": `StaticRender ${rheast.version}`,
-                "time": rheast.time,
-                "data": [
+                value: `StaticRender ${rheast.version}`,
+                time: rheast.time,
+                data: [
                     {
-                        "url": "img/logo/GitHub_Logo.svg",
-                        "link": "https://github.com/rheast/rheast.github.io/tree/main/mod"
+                        url: "img/logo/GitHub_Logo.svg",
+                        link: "https://github.com/rheast/rheast.github.io/tree/main/mod"
                     }
                 ]
             },
             {
-                "value": "Space Theory",
-                "time": "May 09, 2021",
-                "data": [
+                value: "Space Theory",
+                time: "May 09, 2021",
+                data: [
                     {
-                        "url": "img/logo/osf.dark.png",
-                        "link": "https://osf.io/ze4jc"
+                        url: "img/logo/osf.dark.png",
+                        link: "https://osf.io/ze4jc"
                     },
                     {
-                        "url": "img/logo/pre.dark.png",
-                        "link": "https://preprints.org/manuscript/202105.0197"
+                        url: "img/logo/pre.dark.png",
+                        link: "https://preprints.org/manuscript/202105.0197"
                     }
                 ]
             },
@@ -80,23 +81,23 @@ var yourData = [
         title: "News",
         data: [
             {
-                "value": "Hearing Wrap Up: Dr. Fauci Held Publicly Accountable by Select Subcommittee",
-                "time": "Jun 04, 2024",
-                "data": [
+                value: "Hearing Wrap Up: Dr. Fauci Held Publicly Accountable by Select Subcommittee",
+                time: "Jun 04, 2024",
+                data: [
                     {
-                        "url": "img/logo/house.png",
-                        "icon": "mh-2e t-x2 mt-5c",
-                        "link": "https://oversight.house.gov/release/hearing-wrap-up-dr-fauci-held-publicly-accountable-by-select-subcommittee/"
+                        url: "img/logo/house.png",
+                        icon: "mh-2e t-x2 mt-5c",
+                        link: "https://oversight.house.gov/release/hearing-wrap-up-dr-fauci-held-publicly-accountable-by-select-subcommittee/"
                     }
                 ]
             },
             {
-                "value": "Stanford professor who challenged lockdowns and 'scientific clerisy' declares academic freedom 'dead'",
-                "time": "Nov 21, 2022",
-                "data": [
+                value: "Stanford professor who challenged lockdowns and 'scientific clerisy' declares academic freedom 'dead'",
+                time: "Nov 21, 2022",
+                data: [
                     {
-                        "url": "img/logo/fox.light.svg",
-                        "link": "https://www.foxnews.com/us/stanford-professor-challenged-lockdowns-scientific-clerisy-declares-academic-freedom-dead"
+                        url: "img/logo/fox.light.svg",
+                        link: "https://www.foxnews.com/us/stanford-professor-challenged-lockdowns-scientific-clerisy-declares-academic-freedom-dead"
                     }
                 ]
             },
@@ -108,9 +109,10 @@ var yourData = [
         title: "Contact",
         data: [
             {
-                "name": "S. Chen",
-                "before": "chen",
-                "after": "rheast.com"
+                name: "S. Chen",
+                before: "chen",
+                after: "rheast.com",
+                img: "img/icon/icon.dark.svg",
             },
         ],
         body: true,
@@ -119,15 +121,16 @@ var yourData = [
     {
         data: [
             {
-                "link": "https://github.com/rheast",
-                "url": "img/logo/github.light.svg"
+                link: "https://github.com/rheast",
+                url: "img/logo/github.light.svg"
             },
             {
-                "link": "https://scholar.google.com/citations?user=di6KaxoAAAAJ",
-                "url": "img/logo/scholar.png"
+                link: "https://scholar.google.com/citations?user=di6KaxoAAAAJ",
+                url: "img/logo/scholar.png"
             },
         ],
-        foot: "Rheast LLC, 1331 Lamar St, Houston, TX 77010",
+        addr: ["Rheast LLC,", "1331 Lamar St,", "Houston,", "TX 77010"],
+        foot: true,
     },
 ]
 
