@@ -10,74 +10,78 @@
     <link rel="alternate icon" type="image/png" href="img/icon/favicon.png">
     <link rel="icon" type="image/svg+xml" href="img/icon/favicon.svg">
     <link rel="shortcut icon" type="image/x-icon" href="img/icon/favicon.ico">
-    <link rel="stylesheet" type="text/css" href="css/rheast.css">
-    <script src="js/rheast.js"></script>
+    <link rel="stylesheet" type="text/css" href="mod/tailwind.css">
+    <link rel="stylesheet" type="text/css" href="data/rheast.css">
+    <script src="mod/rheast.js"></script>
     <script src="data/data.js"></script>
 </head>
 
 <body>
-    <div class="cRheast c_black" _data="data/data.json" _handle="myVersion">
-        <!--<div _load="body/head.html"></div>-->
-        <div class="head rel b_black center">
-            <div class="vTriangle"></div>
-            <div class="inner rel">
-                <div class="logo">
-                    <img class="yMax auto" src="img/icon/rheast.svg" alt="Rheast LLC">
+    <div class="rel c_black" _for="yourData">
+        <div class="rel py-8 mb-20 t-ct {color}" _if="head">
+            <div class="inner">
+                <div class="w-full h-5e t-5e mb-5c abs left bottom flex-center align-end over-hide">
+                    <div class="triangle m-1e t-5e m-4c"></div>
                 </div>
-                <h2>
-                    <span _for="myHead" class="nowrap">{_this}</span>
-                </h2>
-                <div class="cButton b_white auto">LEARN MORE</div>
+                <div class="rel over-hide">
+                    <div class="t-2e my-2 h-4e w-full flex-center">
+                        <img class="h-full ml-2c" src="img/icon/rheast.svg" alt="Rheast LLC">
+                    </div>
+                    <p class="flex-center flex-wrap nowrap mb-20 bold">
+                        <span class="t-x4 mx-2" _for="data">{_this}</span>
+                    </p>
+                    <div class="flex-center nowrap letter bold">
+                        <div class="b_white px-6 py-3 r-1">LEARN MORE</div>
+                    </div>
+                </div>
             </div>
         </div>
-        <div class="word">
+
+        <div class="rel py-8 {color}" _if="foot">
             <div class="inner">
-                <h1>About</h1>
-                <p _for="myFreedom">{_this}</p>
-            </div>
-        </div>
-        <!--<div _load="body/body.html"></div>-->
-        <div _for="myData" class="word {color}">
-            <div class="inner">
-                <h1>{value}</h1>
-                <h4 class="paper" _for="data">
-                    <label>
-                        <a href="{link}" target="_blank">{value}</a>
-                    </label>
-                    <span class="wrap">
-                        <small>{time}</small>
-                        <a href="{link}" target="_blank" _for="data">
-                            <img class="{icon}" _src="{url}">
-                        </a>
-                    </span>
-                </h4>
-            </div>
-        </div>
-        <!--<div _load="body/foot.html"></div>-->
-        <div class="word">
-            <div class="inner">
-                <h1>Contact</h1>
-                <dl class="contact wrap middle">
-                    <dd class="middle" _for="myUser">
-                        <h4 class="rel nowrap">
-                            <em class="user iImg" style="background-image:url('img/icon/icon.dark.svg');"></em>
-                            <label><span>{name}</span></label>
-                            <label><span>{before}<span>@</span>{after}</span></label>
-                        </h4>
-                    </dd>
-                </dl>
-            </div>
-        </div>
-        <div class="foot b_black">
-            <div class="inner center">
-                <div class="wrap middle">
-                    <a _for="myLink" href="{link}" target="_blank">
-                        <em class="iImg" _style="background-image:url('{url}');"></em>
+                <div class="flex-center flex-wrap nowrap">
+                    <a class="flex-center px-4" href="{link}" target="_blank" _for="data">
+                        <em class="img block m-2e r-9" _style="background-image:url('{url}');"></em>
                     </a>
                 </div>
-                <h6 class="nowrap">
-                    <span _for="myAddr">{_this}</span>
-                </h6>
+                <p class="t-ct mt-4">
+                    <span class="t-s3">{foot}</span>
+                </p>
+            </div>
+        </div>
+
+        <div class="rel px-8 py-16 {color}" _if="body">
+            <div class="inner">
+                <h1 class="t-x6">{title}</h1>
+
+                <div class="rel pt-4" _if="word">
+                    <p class="mt-8 t-i2" _for="data">{_this}</p>
+                </div>
+
+                <div class="rel t-x1" _if="list">
+                    <p class="mt-12" _for="data">
+                        <span class="w-full flex mb-1">
+                            <a href="{link}" target="_blank">{value}</a>
+                        </span>
+                        <span class="w-full flex-wrap nowrap">
+                            <span class="mw-7e pr-3">{time}</span>
+                            <a class="flex-center mr-3" href="{link}" target="_blank" _for="data">
+                                <img class="h-1e {icon}" _src="{url}">
+                            </a>
+                        </span>
+                    </p>
+                </div>
+
+                <div class="rel flex-center flex-wrap nowrap" _if="user">
+                    <div class="w-50 mt-16 flex-center" _for="data">
+                        <em class="img block m-3e t-x1 r-9"
+                            style="background-image:url('img/icon/icon.dark.svg');"></em>
+                        <p class="ml-4">
+                            <label class="flex t-x1"><span>{name}</span></label>
+                            <label class="flex"><span>{before}<span>@</span>{after}</span></label>
+                        </p>
+                    </div>
+                </div>
             </div>
         </div>
     </div>

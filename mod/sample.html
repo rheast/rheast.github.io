@@ -1,0 +1,40 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="shortcut icon" type="image/x-icon" href="../img/icon/favicon.ico">
+    <script src="rheast.js"></script>
+</head>
+
+<body>
+    <ul _data="sample.json">
+        <li _for="data">
+            <div>
+                <span _style="color:{color};">{name}</span>
+            </div>
+            <table _if="table">
+                <tbody>
+                    <tr _for="data">
+                        <td>{_index}</td>
+                        <td>{time}</td>
+                        <td>{text}</td>
+                    </tr>
+                </tbody>
+            </table>
+            <div _else="table">
+                <span _for="data">
+                    <span>{_value}</span>
+                </span>
+            </div>
+        </li>
+        <li>
+            <div>
+                <span _for="[1,2,3]">
+                    <span>{_this}</span>
+                </span>
+            </div>
+        </li>
+    </ul>
+</body>
+
+</html>
