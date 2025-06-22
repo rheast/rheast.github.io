@@ -131,8 +131,7 @@ var yourData = [
     },
 ]
 
-for (let i = 0; i < yourData.length; i++) {
-    if (i % 2 == 0) {
-        yourData[i].color = "b_black";
-    }
-}
+yourData.forEach((item, i) => {
+    if (i % 2 === 0) { item.color = "b_black" };
+    if (item.list) { item.data.forEach(d => d.link = d.data[0].link) };
+});
