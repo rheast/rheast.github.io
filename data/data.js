@@ -28,7 +28,7 @@ var yourData = [
                     {
                         url: "img/logo/MedRxiv.light.png",
                         icon: "t-x1 light",
-                        link: "https://medrxiv.org/cgi/content/short/2025.03.30.25324894v1"
+                        link: "https://medrxiv.org/cgi/content/short/2025.03.30.25324894"
                     }
                 ]
             },

@@ -16,7 +16,15 @@ def setBase(data, z=False):
 
 
 def setNumber(e, a, b, s, v):
+    num = v.split("em")
     cut = [f"{e[0]}{n[0]}-{s}" for n in [a, b]]
+    if len(num) > 1:
+        n, m = num[0].split(".")
+        c = "c" if n.startswith("-") else ""
+        n = n.lstrip("-")
+        m = f"{int(float(f'.{m}')*4)}q" if int(m) else ""
+        cut = [f"{e[0]}{x}-{n}e{m}{c}" for x in ["", a[0], b[0]]] + cut
+        cut = [x for x in cut if len(x.split("q")) == 1]
     info.append([f"{e[0]}-{s}", f"{e}-{a}", v, cut])
 
 
@@ -59,6 +67,7 @@ inside = [
     ["justify-content", ["evenly", "between", "around"], "space", False],
     ["align-items", ["center", "start", "end", "stretch"], "", False],
     ["flex-direction", ["row", "column"], "", 3],
+    ["flex-direction", ["row-reverse", "column-reverse"], "", False],
     ["flex-wrap", ["wrap", "nowrap"], "", False],
 ]
 
@@ -72,6 +81,8 @@ for style, index, before, cut in inside:
         after = [x for x in after if x != name]
         if i == "center":
             after.append("flex-center")
+        if len(i.split("-rev")) > 1:
+            after.append(f"rev-{i[:3]}")
         flex += [name, *after]
         info.append([name, style, f"{before}{i}", after if len(after) else False])
 
@@ -94,7 +105,7 @@ for e in ["width", "height"]:
             info.append([text, e, f"{i+1}{b}", cut])
 
     for i in range(9):
-        info.append([f"m{e[0]}-{i+1}e", f"min-{e}", f"{i+1}em", f"m-{i+1}e"])
+        info.append([f"m{e[0]}-{i+1}e", f"min-{e}", f"{i+1}em", f"min-{i+1}e"])
 
 
 setBase(info)
@@ -120,7 +131,8 @@ for e in ["s*", "x*", "*e", "i*"]:
         b = (i + 12) / 16 if e[0] == "s" else (i + 9) / 8 if e[0] == "x" else i + 1
         c = "text-indent" if e[0] == "i" else "font-size"
         if e[0] == "x" or i < 5:
-            info.append([f"text-{a}", c, f"{b}em", f"t-{a}"])
+            if not (e[0] == "s" and i > 3):
+                info.append([f"text-{a}", c, f"{b}em", f"t-{a}"])
 
 setBase(info)
 matrix += ["", "/* Other */"]
@@ -133,7 +145,8 @@ for a, b in [["o", "opacity"], ["z", "z-index"], ["r", "border-radius"]]:
     for i in range(10):
         num = f"{i/4}em" if a == "r" else str(i)
         if a == "o":
-            num = f"{i*25}%" if i < 5 else False
+            i = i * 25
+            num = f"{i}%" if i <= 100 else False
         if num:
             info.append([f"{e}-{i}", b, num, f"{a}-{i}"])
     if a == "r":
