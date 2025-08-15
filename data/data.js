@@ -26,9 +26,9 @@ var yourData = [
                 time: "Mar 31, 2025",
                 data: [
                     {
-                        url: "img/logo/MedRxiv.light.png",
-                        icon: "t-x1 light",
-                        link: "https://medrxiv.org/cgi/content/short/2025.03.30.25324894"
+                        url: "img/logo/Frontiers.light.svg",
+                        icon: "t-x4",
+                        link: "https://www.frontiersin.org/journals/public-health/articles/10.3389/fpubh.2025.1602711/"
                     }
                 ]
             },
@@ -55,6 +55,7 @@ var yourData = [
                 data: [
                     {
                         url: "img/logo/GitHub_Logo.svg",
+                        icon: "t-x1",
                         link: "https://github.com/rheast/rheast.github.io/tree/main/mod"
                     }
                 ]
@@ -64,12 +65,14 @@ var yourData = [
                 time: "May 09, 2021",
                 data: [
                     {
-                        url: "img/logo/osf.dark.png",
-                        link: "https://osf.io/ze4jc"
+                        url: "img/logo/pre.dark.png",
+                        icon: "t-x2",
+                        link: "https://preprints.org/manuscript/202105.0197"
                     },
                     {
-                        url: "img/logo/pre.dark.png",
-                        link: "https://preprints.org/manuscript/202105.0197"
+                        url: "img/logo/osf.dark.png",
+                        icon: "t-x1",
+                        link: "https://osf.io/ze4jc"
                     }
                 ]
             },
@@ -77,6 +80,7 @@ var yourData = [
         body: true,
         list: true,
     },
+    /*
     {
         title: "News",
         data: [
@@ -118,6 +122,7 @@ var yourData = [
         body: true,
         user: true,
     },
+    */
     {
         data: [
             {
