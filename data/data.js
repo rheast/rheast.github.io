@@ -55,7 +55,6 @@ var yourData = [
                 data: [
                     {
                         url: "img/logo/GitHub_Logo.svg",
-                        icon: "t-x1",
                         link: "https://github.com/rheast/rheast.github.io/tree/main/mod"
                     }
                 ]
@@ -66,12 +65,11 @@ var yourData = [
                 data: [
                     {
                         url: "img/logo/pre.dark.png",
-                        icon: "t-x2",
+                        icon: "t-x1",
                         link: "https://preprints.org/manuscript/202105.0197"
                     },
                     {
                         url: "img/logo/osf.dark.png",
-                        icon: "t-x1",
                         link: "https://osf.io/ze4jc"
                     }
                 ]
