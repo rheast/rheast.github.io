@@ -22,8 +22,8 @@ var yourData = [
         title: "Publication",
         data: [
             {
-                value: "The Statistical Illusion of a Global HIV Endgame",
-                time: "Mar 31, 2025",
+                value: "The Statistical Illusion of a Global HIV Endgame: Disparities in Regional Progress Toward 95-95-95 Targets",
+                time: "Aug 12, 2025",
                 data: [
                     {
                         url: "img/logo/Frontiers.light.svg",
@@ -61,7 +61,7 @@ var yourData = [
             },
             {
                 value: "Space Theory",
-                time: "May 09, 2021",
+                time: "May 01, 2025",
                 data: [
                     {
                         url: "img/logo/pre.dark.png",
