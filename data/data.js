@@ -23,12 +23,17 @@ var yourData = [
         data: [
             {
                 value: "The Statistical Illusion of a Global HIV Endgame: Disparities in Regional Progress Toward 95-95-95 Targets",
-                time: "Aug 12, 2025",
+                time: "Aug 29, 2025",
                 data: [
                     {
                         url: "img/logo/Frontiers.light.svg",
-                        icon: "t-x4",
+                        icon: "t-x3 my-4c",
                         link: "https://www.frontiersin.org/journals/public-health/articles/10.3389/fpubh.2025.1602711/"
+                    },
+                    {
+                        url: "img/logo/pubmed-logo-blue.svg",
+                        icon: "t-2e my-4c",
+                        link: "https://pmc.ncbi.nlm.nih.gov/articles/pmid/40951376/"
                     }
                 ]
             },

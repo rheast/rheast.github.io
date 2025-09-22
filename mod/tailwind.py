@@ -93,10 +93,10 @@ info = []
 
 for e in ["width", "height"]:
     for a, b, c in ([e[:1], "%", "wh"], [f"v{e[:1]}"] * 2 + ["v"]):
-        for i in [25, 33.33, 50, 75, 100]:
+        for i in [25, 33.33, 50, 75, 100, 150, 200, 300]:
             text, cut = f"{a}-{int(i)}", False
             if i == 100:
-                text, cut = f"{a}-full", f"{c}-full"
+                cut = f"{a}-full, .{c}-full"
             info.append([text, e, f"{i}{b}", cut])
 
     for a, b, c in (["", "px", 1], ["e", "em", 9]):

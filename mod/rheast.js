@@ -3,8 +3,8 @@
 class RHEast {
     constructor() {
         this.name = 'StaticRender';
-        this.time = 'Jan 15, 2025';
-        this.version = `v${1.08}`;
+        this.time = 'Sep 18, 2025';
+        this.version = `v${1.9}`;
         this.virtual = [];
         this.forStyle();
         console.log(this.name, this.version, 'Rheast.js');
@@ -86,7 +86,8 @@ class RHEast {
                 case !target:
                     return data;
                 case /^\[.*\]$|^\{.*\}$/.test(target):
-                    return JSON.parse(target.replaceAll("'", '"'));
+                    let j = JSON.parse(target.replaceAll("'", '"'));
+                    return (typeof data === 'object' && Array.isArray(j)) ? j.map(e => ({ ...data, _this: e })) : j;
                 case data && target in data:
                     return data[target];
                 case Array.isArray(data):

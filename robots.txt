@@ -1,6 +1,7 @@
 User-agent: *
 Allow: /index.html
+Allow: /img/icon/
 Disallow: /css/
-Disallow: /img/
-Disallow: /js/
+Disallow: /mod/
+Disallow: /img/logo/
 Sitemap: https://rheast.com/sitemap.xml
