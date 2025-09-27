@@ -86,10 +86,12 @@ var yourData = [
     {
         data: [
             {
+                name: "GitHub",
                 link: "https://github.com/rheast",
                 url: "img/logo/github.light.svg"
             },
             {
+                name: "Google Scholar",
                 link: "https://scholar.google.com/citations?user=di6KaxoAAAAJ",
                 url: "img/logo/scholar.png"
             },

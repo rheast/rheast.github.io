@@ -39,7 +39,6 @@
             </div>
         </div>
 
-
         <div class="rel px-8 py-16 {color}" _if="body">
             <div class="inner">
                 <h1 class="t-x6">{title}</h1>
@@ -79,8 +78,9 @@
         <div class="rel py-8 {color}" _if="foot">
             <div class="inner">
                 <div class="flex-center flex-wrap nowrap" _if="data">
-                    <a class="flex-center px-4" href="{link}" target="_blank" _for="data">
+                    <a class="flex-center flex-col px-8" href="{link}" target="_blank" _for="data">
                         <em class="img block min-2e r-9" _style="background-image:url('{url}');"></em>
+                        <span _if="name" class="t-s3 mt-2">{name}</span>
                     </a>
                 </div>
                 <ul class="t-ct mt-4 flex-center flex-wrap nowrap" _if="addr">
