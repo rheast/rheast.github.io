@@ -78,12 +78,12 @@
         
         <div class="rel py-8 {color}" _if="foot">
             <div class="inner">
-                <div class="flex-center flex-wrap nowrap">
+                <div class="flex-center flex-wrap nowrap" _if="data">
                     <a class="flex-center px-4" href="{link}" target="_blank" _for="data">
                         <em class="img block min-2e r-9" _style="background-image:url('{url}');"></em>
                     </a>
                 </div>
-                <ul class="t-ct mt-4 flex-center flex-wrap nowrap">
+                <ul class="t-ct mt-4 flex-center flex-wrap nowrap" _if="addr">
                     <li class="t-s3 mx-1" _for="addr">
                         <label>{_this}</label>
                     </li>

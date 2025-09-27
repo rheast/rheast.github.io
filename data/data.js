@@ -83,49 +83,6 @@ var yourData = [
         body: true,
         list: true,
     },
-    /*
-    {
-        title: "News",
-        data: [
-            {
-                value: "Hearing Wrap Up: Dr. Fauci Held Publicly Accountable by Select Subcommittee",
-                time: "Jun 04, 2024",
-                data: [
-                    {
-                        url: "img/logo/house.png",
-                        icon: "mh-2e t-x2 mt-5c",
-                        link: "https://oversight.house.gov/release/hearing-wrap-up-dr-fauci-held-publicly-accountable-by-select-subcommittee/"
-                    }
-                ]
-            },
-            {
-                value: "Stanford professor who challenged lockdowns and 'scientific clerisy' declares academic freedom 'dead'",
-                time: "Nov 21, 2022",
-                data: [
-                    {
-                        url: "img/logo/fox.light.svg",
-                        link: "https://www.foxnews.com/us/stanford-professor-challenged-lockdowns-scientific-clerisy-declares-academic-freedom-dead"
-                    }
-                ]
-            },
-        ],
-        body: true,
-        list: true,
-    },
-    {
-        title: "Contact",
-        data: [
-            {
-                name: "S. Chen",
-                before: "chen",
-                after: "rheast.com",
-                img: "img/icon/icon.dark.svg",
-            },
-        ],
-        body: true,
-        user: true,
-    },
-    */
     {
         data: [
             {
@@ -137,7 +94,6 @@ var yourData = [
                 url: "img/logo/scholar.png"
             },
         ],
-        addr: ["Rheast LLC,", "1331 Lamar St,", "Houston,", "TX 77010"],
         foot: true,
     },
 ]
