@@ -27,12 +27,12 @@ var yourData = [
                 data: [
                     {
                         url: "img/logo/Frontiers.light.svg",
-                        icon: "t-x3 my-4c",
+                        icon: "t-x3",
                         link: "https://www.frontiersin.org/journals/public-health/articles/10.3389/fpubh.2025.1602711/"
                     },
                     {
                         url: "img/logo/pubmed-logo-blue.svg",
-                        icon: "t-2e my-4c",
+                        icon: "t-2e",
                         link: "https://pmc.ncbi.nlm.nih.gov/articles/pmid/40951376/"
                     }
                 ]
@@ -69,15 +69,23 @@ var yourData = [
                 time: "May 01, 2025",
                 data: [
                     {
-                        url: "img/logo/pre.dark.png",
-                        icon: "t-x1",
-                        link: "https://preprints.org/manuscript/202105.0197"
-                    },
-                    {
                         url: "img/logo/osf.dark.png",
+                        icon: "t-x1",
                         link: "https://osf.io/ze4jc"
                     }
-                ]
+                ],
+                data: [
+                    {
+                        url: "img/logo/zenodo.dark.svg",
+                        icon: "t-x2 mb-1",
+                        link: "https://zenodo.org/records/17264724"
+                    },
+                    {
+                        url: "img/logo/pre.dark.png",
+                        icon: "t-x2",
+                        link: "https://preprints.org/manuscript/202105.0197"
+                    }
+                ],
             },
         ],
         body: true,
