@@ -35,6 +35,11 @@ var yourData = [
                         url: "img/logo/pubmed-logo-blue.svg",
                         icon: "t-2e",
                     },
+                    {
+                        link: "https://zenodo.org/records/17461992",
+                        url: "img/logo/zenodo.svg",
+                        icon: "t-x2 mb-1",
+                    },
                 ],
             },
             {
@@ -54,6 +59,17 @@ var yourData = [
     {
         title: "Other",
         data: [
+            {
+                value: "Case 202579453",
+                time: "Oct 14, 2025",
+                data: [
+                    {
+                        link: "https://zenodo.org/records/17462482",
+                        url: "img/logo/zenodo.dark.svg",
+                        icon: "t-x2 mb-1",
+                    },
+                ],
+            },
             {
                 value: `StaticRender ${rheast.version}`,
                 time: rheast.time,
