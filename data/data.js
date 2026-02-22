@@ -27,14 +27,14 @@ var yourData = [
                 time: "Aug 29, 2025",
                 data: [
                     {
+                        link: "https://pubmed.ncbi.nlm.nih.gov/40951376/",
+                        url: "img/logo/pubmed-logo-blue.svg",
+                        icon: "t-2e",
+                    },
+                    {
                         link: "https://www.frontiersin.org/journals/public-health/articles/10.3389/fpubh.2025.1602711/",
                         url: "img/logo/Frontiers.light.svg",
                         icon: "t-x3",
-                    },
-                    {
-                        link: "https://pmc.ncbi.nlm.nih.gov/articles/pmid/40951376/",
-                        url: "img/logo/pubmed-logo-blue.svg",
-                        icon: "t-2e",
                     },
                     {
                         link: "https://zenodo.org/records/17461992",
@@ -47,6 +47,11 @@ var yourData = [
                 value: "Commentary on LRAs targeting NF-κB with epigenetic and mutational impacts on HIV latency",
                 time: "Sep 25, 2024",
                 data: [
+                    {
+                        link: "https://pubmed.ncbi.nlm.nih.gov/41676118/",
+                        url: "img/logo/pubmed-logo-blue.svg",
+                        icon: "t-2e",
+                    },
                     {
                         link: "https://onlinelibrary.wiley.com/doi/10.1002/imo2.31",
                         url: "img/logo/wiley.light.svg",
