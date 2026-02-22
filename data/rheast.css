@@ -45,11 +45,11 @@ body {
 
 .c_white,
 .b_black {
-    color: #fff;
+    color: #fefefc;
 }
 
 .b_white {
-    background-color: #fff;
+    background-color: #fefefc;
 }
 
 .c_black,
@@ -95,7 +95,7 @@ h1 {
     border-color: #fff;
 }
 
-.triangle {
+.triangle:nth-child(n) {
     border: 1em solid;
     border-color: #2d2d2d #fff #fff;
     transform: scaleX(5);
@@ -103,4 +103,8 @@ h1 {
 
 .light {
     filter: brightness(2.5);
+}
+
+.gray {
+    filter: grayscale(100%) brightness(150%);
 }

@@ -5,6 +5,7 @@ var yourData = [
             "A lie doesn't like being challenged.",
         ],
         button: "LEARN MORE",
+        logo: "img/icon/rheast.webp",
         head: true,
     },
     {
@@ -59,17 +60,6 @@ var yourData = [
     {
         title: "Other",
         data: [
-            {
-                value: "Case 202579453",
-                time: "Oct 14, 2025",
-                data: [
-                    {
-                        link: "https://zenodo.org/records/17462482",
-                        url: "img/logo/zenodo.dark.svg",
-                        icon: "t-x2 mb-1",
-                    },
-                ],
-            },
             {
                 value: `StaticRender ${rheast.version}`,
                 time: rheast.time,
